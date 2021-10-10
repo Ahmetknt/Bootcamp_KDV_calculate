@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="248dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="40dp"
+        android:text="KDV Hesaplama"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/kdvText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:text="KDV yüzdesi seçiniz "
+        android:textColor="#009688"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hesaplanacakTutarEditText"
+        tools:ignore="MissingConstraints"></TextView>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="118dp"
+        android:layout_height="189dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:checkedButton="@id/kdv_0.8"
+        android:padding="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kdvText"
+        tools:ignore="MissingConstraints">
+
+
+        <RadioButton
+            android:id="@+id/kdv_0.8"
+            android:layout_width="98dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:buttonTint="@color/teal_200"
+            android:text="%0.8"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/kdv_1.8"
+            android:layout_width="98dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:buttonTint="#F44336"
+            android:text="%1.8"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/kdv_18"
+            android:layout_width="98dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:buttonTint="#FFEB3B"
+            android:text="%18"></RadioButton>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/hesaplanacakTutarEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Hesaplanacak Tutar : "
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="359dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="30dp"
+        android:text="KDV bir üst sayıya yuvarlansın mı ? "
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/sonuc"
+        android:layout_width="213dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="30dp"
+        tools:text = "tutar"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Hesapla"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
